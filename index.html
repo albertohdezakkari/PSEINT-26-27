@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PSeInt Learning Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><b>PSeInt Learning Studio</b><small>1.ª evaluación · Lenguajes de Programación</small></div>
+    <div class="progress"><div><span>Progreso</span><b id="pct">0%</b></div><div class="bar"><i id="bar"></i></div><small id="detail"></small></div>
+    <h4>Ejercicios</h4><nav id="nav"></nav>
+    <h4>Evaluación</h4><button class="navbtn" id="quizNav">✓ <span>Test final<small>20 preguntas</small></span></button>
+    <button class="reset" id="resetAll">Reiniciar progreso</button>
+  </aside>
+
+  <main>
+    <header>
+      <button id="menu">☰</button>
+      <div><small>PSEINT · PRÁCTICA PROGRESIVA</small><h1 id="pageTitle">Cuaderno interactivo</h1></div>
+    </header>
+
+    <section id="home" class="view active">
+      <div class="hero">
+        <div>
+          <span class="pill">Nivel actual de clase</span>
+          <h2>Matrices, bucles, Azar, búsqueda y contadores.</h2>
+          <p>10 ejercicios progresivos en contextos diferentes para practicar lógica con PSeInt y un test final de 20 preguntas.</p>
+          <button class="primary" id="start">Empezar</button>
+          <button class="secondary" id="continue">Continuar</button>
+        </div>
+        <div class="grid-demo">
+          <span>.</span><span>.</span><span>H</span><span>.</span><span>*</span>
+          <span>.</span><span>H</span><span>.</span><span>.</span><span>.</span>
+          <span>*</span><span>.</span><span>.</span><span>H</span><span>.</span>
+          <span>.</span><span>.</span><span>*</span><span>.</span><span>.</span>
+          <span>H</span><span>.</span><span>.</span><span>.</span><span>*</span>
+        </div>
+      </div>
+      <div class="path">
+        <article><b>1. Construir</b><p>Crear y rellenar matrices.</p></article>
+        <article><b>2. Insertar</b><p>Posiciones aleatorias sin repetir.</p></article>
+        <article><b>3. Analizar</b><p>Buscar y contar información.</p></article>
+        <article><b>4. Integrar</b><p>Combinar validación y estados.</p></article>
+      </div>
+    </section>
+
+    <section id="exercise" class="view">
+      <div class="exercise-head">
+        <div><span class="pill" id="level"></span><h2 id="title"></h2><p id="context"></p></div>
+        <b id="status"></b>
+      </div>
+
+      <div class="layout">
+        <div class="content">
+          <article class="card blue"><h3>🎯 Objetivo</h3><p id="objective"></p></article>
+          <article class="card"><h3>Enunciado</h3><div id="task"></div></article>
+          <article class="card"><h3>Requisitos obligatorios</h3><ul id="requirements"></ul></article>
+          <article class="card violet"><h3>Conceptos que debes usar</h3><div id="concepts"></div></article>
+          <article class="card">
+            <div class="row"><h3>Tu solución</h3><button class="link" id="copy">Copiar</button></div>
+            <p class="muted">Escribe o pega tu algoritmo. Se guarda automáticamente en este navegador.</p>
+            <textarea id="editor" spellcheck="false" placeholder="Algoritmo MiSolucion&#10;    // Escribe aquí...&#10;FinAlgoritmo"></textarea>
+          </article>
+          <article class="card"><h3>Comprueba que lo entiendes</h3><p id="reflection"></p><textarea id="answer" class="short" placeholder="Explícalo con tus propias palabras..."></textarea></article>
+          <article class="card amber hidden" id="hintBox"><h3>💡 Pista</h3><p id="hint"></p></article>
+          <article class="card green hidden" id="solutionBox"><h3>Solución orientativa</h3><pre><code id="solution"></code></pre><p class="muted">Una solución equivalente también es válida.</p></article>
+        </div>
+        <aside class="checkpanel">
+          <h3>Checklist</h3>
+          <label><input type="checkbox" data-check="understood"> Entiendo el enunciado</label>
+          <label><input type="checkbox" data-check="coded"> He escrito el algoritmo</label>
+          <label><input type="checkbox" data-check="tested"> Lo he probado en PSeInt</label>
+          <label><input type="checkbox" data-check="explain"> Puedo explicarlo</label>
+          <button class="secondary wide" id="hintBtn">Ver pista</button>
+          <button class="secondary wide" id="solutionBtn">Ver solución</button>
+          <button class="primary wide" id="complete">Marcar completado</button>
+        </aside>
+      </div>
+
+      <div class="pager"><button class="secondary" id="prev">← Anterior</button><button class="primary" id="next">Siguiente →</button></div>
+    </section>
+
+    <section id="quiz" class="view">
+      <span class="pill">Repaso final</span>
+      <h2>Test de 20 preguntas</h2>
+      <p class="muted">Una única respuesta correcta. Corrige todo al final.</p>
+      <div id="quizList"></div>
+      <div class="quiz-actions"><button class="primary" id="grade">Corregir test</button><button class="secondary" id="resetQuiz">Reiniciar respuestas</button></div>
+      <div id="result" class="result hidden"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
